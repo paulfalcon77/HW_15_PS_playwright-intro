@@ -1,10 +1,12 @@
 import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker';
 
-const TD_URL = 'https://fe-delivery.tallinn-learning.ee/'
+//const TD_URL = 'https://fe-delivery.tallinn-learning.ee/'
+
+const APP_URL = process.env.APP_URL;
 
 test.beforeEach(async ({ page }) => {
-    await page.goto(TD_URL);
+    await page.goto(APP_URL as string);
     await page.waitForLoadState('networkidle');
 });
 
